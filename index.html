@@ -7,22 +7,24 @@
 <script src="aframe.min.js"></script>
 <script src="aframe-ar.min.js"></script>
 <script src="aframe-event-set-component.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.3/FileSaver.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+<script src="FileSaver.js"></script>
+<script src="html2canvas.min.js"></script>
 <title>A.r</title>
 </head>
 
-<body id="all">	
+<body id="foto">	
 	
+
+	
+<a-scene embedded arjs="trackingMethod: best; sourceType:webcam; detectionMode:mono_and_matrix; matrixCodeType: 3x3;" > <!-- crea la scena-->
+
 <div id="c2">
-	<button onclick="generate();">
+	<button onClick="generate();">
 		Generate Screenshot
 	</button>
 </div>
 
 	
-<a-scene embedded arjs="trackingMethod: best; sourceType:webcam; detectionMode:mono_and_matrix; matrixCodeType: 3x3;" > <!-- crea la scena-->
-
 <a-assets>
 	<img id="1" src="img/CARLO_BO.jpg" alt="carlobo">
 	<img id="2" src="img/ERSU.jpg" alt="ersu">
@@ -82,11 +84,12 @@
 	
 <div id="container">
 	
-	<p class="info">
+	<p class="info"> 
 		Istruzioni: <br><br> -Condividere l'utilizzo della videocamera con la pagina internet <br><br> -Rimanere dentro gli appositi segni sul terreno <br><br> -Posizionare correttamente la videocamera per una corretta visualizzazione dell'immagine nell'ambiente <br>(si consiglia un'inquadratura orizzontale)<br><br> Buon divertimento.
 	</p>
 
-<button onClick="avviso()">HO CAPITO!</button>
+<button onClick="avviso()">HO CAPITO!</button> 
+
 </div>
 
 	
@@ -136,8 +139,8 @@
     }
 
     function screenshotPage() {
-        var all = document.getElementsById('all');  // DECIDE DOVE PRENDE LO SCREENSHOT
-        html2canvas(all, {
+        var foto = document.getElementsById('foto');  // DECIDE DOVE PRENDE LO SCREENSHOT
+        html2canvas(foto, {
             onrendered: function(canvas) {
                 canvas.toBlob(function(blob) {
                     saveAs(blob, 'myScreenshot.png');
