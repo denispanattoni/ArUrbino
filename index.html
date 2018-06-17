@@ -136,7 +136,7 @@
     }
 
     function screenshotPage() {
-        var all = document.getElementsByTagName('body');  // DECIDE DOVE PRENDE LO SCREENSHOT
+        var all = document.getElementsById('all');  // DECIDE DOVE PRENDE LO SCREENSHOT
         html2canvas(all, {
             onrendered: function(canvas) {
                 canvas.toBlob(function(blob) {
