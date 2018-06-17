@@ -128,7 +128,7 @@
     }
 
     function screenshotPage() {
-        var wrapper = document.getElementById('foto');
+        var wrapper = document.getElementsByTagName('a-scene'); // getElementById('foto');  --> è il file originale
         html2canvas(wrapper, {
             onrendered: function(canvas) {
                 canvas.toBlob(function(blob) {
