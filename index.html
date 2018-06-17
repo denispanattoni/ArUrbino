@@ -8,21 +8,20 @@
 <script src="aframe-ar.min.js"></script>
 <script src="aframe-event-set-component.min.js"></script>
 <script src="FileSaver.js"></script>
-<script src="html2canvas.min.js"></script>
+<script src="html2canvas.js"></script>
 <title>A.r</title>
 </head>
 
 <body id="foto">	
 	
 <div id="c2">
-	<button onClick="generate();">
-		Generate Screenshot
+	<button onclick="generate();">
+		Generate Screenshot »
 	</button>
 </div>
 	
 <a-scene embedded arjs="trackingMethod: best; sourceType:webcam; detectionMode:mono_and_matrix; matrixCodeType: 3x3;" > <!-- crea la scena-->
 
-	
 <a-assets>
 	<img id="1" src="img/CARLO_BO.jpg" alt="carlobo">
 	<img id="2" src="img/ERSU.jpg" alt="ersu">
@@ -87,21 +86,13 @@
 	</p>
 
 <button onClick="avviso()">HO CAPITO!</button> 
-
+	
 </div>
 
 	
 <script type="text/javascript">
 	function avviso() {
     var x = document.getElementById("container");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-}
-	function ok() {
-    var x = document.getElementById("c2");
     if (x.style.display === "none") {
         x.style.display = "block";
     } else {
@@ -137,8 +128,8 @@
     }
 
     function screenshotPage() {
-        var foto = document.getElementsById('foto');  // DECIDE DOVE PRENDE LO SCREENSHOT
-        html2canvas(foto, {
+        var wrapper = document.getElementById('foto');
+        html2canvas(wrapper, {
             onrendered: function(canvas) {
                 canvas.toBlob(function(blob) {
                     saveAs(blob, 'myScreenshot.png');
@@ -160,6 +151,8 @@
     }
     exports.screenshotPage = screenshotPage;
     exports.generate = generate;
-})(window);</script>
+})(window);
+	
+	</script>
 </body>
 </html>
