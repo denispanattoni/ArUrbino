@@ -14,11 +14,11 @@
 
 <body id="foto">	
 	
-<div id="c2">
+<!--div id="c2">
 	<button onclick="generate();">
 		Generate Screenshot »
 	</button>
-</div>
+</div-->
 	
 <a-scene embedded arjs="trackingMethod: best; sourceType:webcam; detectionMode:mono_and_matrix; matrixCodeType: 3x3;" > <!-- crea la scena-->
 
@@ -29,51 +29,51 @@
 	<img id="4" src="img/ORTOBOTANICO.jpg" alt="orto">
 	<img id="5" src="img/PIAZZA.jpg" alt="piazza">
 	<img id="6" src="img/SANTA_LUCIA.jpg" alt="lucia">
-	<img id="7" src="img/TORRICINI.jpg" alt="torricini">
+	<img id="7" src="img/TORRICINII.jpg" alt="torricini">
 	<img id="8" src="img/TURKISH_KEBAB.jpg" alt="kebab">
 	<img id="9" src="img/VIA_MAZZINI.jpg" alt="mazzini">
 	<img id="10" src="img/Accademia.jpg" alt="accademia"> 
 </a-assets>
 
-<a-marker preset="hiro">
-	<a-image src="#1" rotation="-90 0 0" width="852" scale="0.005 0.005" height="1066" position="-1.5 0 -1.5"></a-image>
+<a-marker type="pattern" url="marker/cb.patt">
+	<a-image src="#1" rotation="-90 0 0" width="852" scale="0.005 0.005" height="1066" position="-1.3 0 -1.5"></a-image>
 </a-marker>
 
-<!-- a-marker type="pattern" url="marker/ersu.patt">
-	<a-image src="#2" rotation="-90 0 0" width="1456" height="1820" scale="0.005 0.005" position="-2 0 -1.5"></a-image> 
+<a-marker type="pattern" url="marker/er.patt">
+	<a-image src="#2" rotation="-90 0 0" width="1456" height="1820" scale="0.003 0.003" position="-1.2 0 -0.7"></a-image> 
 </a-marker>
 
-<a-marker type="pattern" url="marker/mercatale.patt">
+<a-marker type="pattern" url="marker/mr.patt">
 	<a-image src="#3" rotation="-90 0 0" width="956" scale="0.005 0.005" height="1194" position="-1.5 0 -1.5"></a-image> 
 </a-marker>
 	
-<a-marker type="pattern" url="marker/orto.patt">
+<a-marker type="pattern" url="marker/ob.patt">
 	<a-image src="#4" rotation="-90 0 0" width="951" scale="0.005 0.005" height="1188" position="-1.5 0 -1.5"></a-image> 
 </a-marker>
 	
-<a-marker type="pattern" url="marker/piazza.patt">
-	<a-image src="#5" rotation="-90 0 0" width="1383" scale="0.005 0.005" height="1727" position="-1.5 0 -1.5"></a-image> 
+<a-marker type="pattern" url="marker/pz.patt">
+	<a-image src="#5" rotation="-90 0 0" width="1383" scale="0.003 0.003" height="1727" position="-1.2 0 -1.5"></a-image> 
 </a-marker>
 	
-<a-marker type="pattern" url="marker/santalucia.patt">
+<a-marker type="pattern" url="marker/sl.patt">
 	<a-image src="#6" rotation="-90 0 0" width="1359" scale="0.005 0.005" height="1700" position="-1.5 0 -1.5"></a-image> 
 </a-marker>
 	
-<a-marker type="pattern" url="marker/torricini.patt">
+<a-marker type="pattern" url="marker/tr.patt">
 	<a-image src="#7" rotation="-90 0 0" width="1128" scale="0.005 0.005" height="1409" position="-1.5 0 -1.5"></a-image> 
 </a-marker>
 	
-<a-marker type="pattern" url="marker/kebab.patt">
-	<a-image src="#8" rotation="-90 0 0" width="1107" scale="0.005 0.005" height="1384" position="-1.5 0 -1.5"></a-image> 
+<a-marker type="pattern" url="marker/kb">
+ 	<a-image src="#8" rotation="-90 0 0" width="1107" scale="0.005 0.005" height="1384" position="-1.5 0 -1.5"></a-image> 
 </a-marker>
 	
 <a-marker type="pattern" url="marker/mazzini.patt">
 	<a-image src="#9" rotation="-90 0 0" width="1332" scale="0.005 0.005" height="1665" position="-1.5 0 -1.5"></a-image> 
 </a-marker>
 	
-<a-marker type="pattern" url="marker/dog.patt">
-	<a-image src="#10" rotation="-90 0 0" width="835" scale="0.005 0.005" height="975" position="-1.5 0 -1.5"></a-image> 
-</a-marker-->
+<a-marker type="pattern" url="marker/aba.patt">
+	<a-image src="#10" rotation="-90 0 0" width="835" scale="0.005 0.005" height="975" position="-1.2 0 -1.5"></a-image> 
+</a-marker>
 
 <a-entity camera></a-entity>
 
@@ -86,7 +86,6 @@
 	</p>
 
 <button onClick="avviso()">HO CAPITO!</button> 
-	
 </div>
 
 	
@@ -128,7 +127,7 @@
     }
 
     function screenshotPage() {
-        var wrapper = document.getElementsByTagName('a-scene'); // getElementById('foto');  --> è il file originale
+        var wrapper = document.getElementsByTagName('a-scene'); // getElementById('foto');  questo è il file originale
         html2canvas(wrapper, {
             onrendered: function(canvas) {
                 canvas.toBlob(function(blob) {
@@ -153,6 +152,6 @@
     exports.generate = generate;
 })(window);
 	
-	</script>
+</script>
 </body>
 </html>
