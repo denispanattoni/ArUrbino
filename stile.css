@@ -1,6 +1,11 @@
 @charset "UTF-8";
 /* CSS Document */
 
+body {
+	font-family: "Gill Sans";
+
+}
+
 #container {
 	position: absolute;
 	background-color:rgba(0,0,0,0.64);
