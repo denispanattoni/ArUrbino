@@ -14,12 +14,11 @@
 #c2 {
 	position: absolute;
 	display: block;
-	background-color:rgba(0,0,0,0.64);
 	width: 90%;
 	left:5%;
 	top: 5%;
-	height: 90%;
 	overflow: scroll;
+	z-index: 100;
 }
 
 .info {
